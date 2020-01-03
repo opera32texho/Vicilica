@@ -1,6 +1,6 @@
 //Создаем массив со словами
 let words = [
-    "программа",
+    
     "макака",
     "прекрасынй",
     "оладушек",
@@ -29,20 +29,22 @@ while (remainingLetters > 0 && endGame > 0) {
     if (guess === null) {
         break;
     } else if (guess.length !== 1) {
-        alert("Пожалуйста, введите только одну букву.");
-  
-    }else if (guess === " _ "){
-
-        
+        alert("Пожалуйста, введите только одну букву.");        
     
     } else {
         guess = guess.toLowerCase();
         for (let j = 0; j < word.length; j++)
-            if (word[j] === guess) {
+            if(answerArray[j]=== guess){
+                alert("Эта буква уже есть, введите другую");
+                break;
+            }
+            else if (word[j] === guess) {
                 answerArray[j] = guess;
+            
                
                 remainingLetters--;
             }
+
             
     }
     endGame--;
